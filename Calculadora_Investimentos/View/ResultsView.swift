@@ -1,4 +1,4 @@
-//
+    //
 //  ResultsView.swift
 //  Calculadora_Investimentos
 //
@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct ResultsView: View {
+    @State private var meses: Int = 10
+    
+    var initialInvestment: Double
+    var monthlyInvestment: Double
+    var anualFee: Double
+    var periodInvestment: Double
+
+    
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -16,120 +25,87 @@ struct ResultsView: View {
             VStack {
                 HStack {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 15)
+                        RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                             .foregroundColor(.white)
                         VStack {
                             Text("Resultados")
-                                .bold()
+                                .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.025))
+                                .foregroundColor(Color.init("BgBlack"))
                             HStack {
                                 Text("Valor investido:")
+                                    .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                    .foregroundColor(Color.init("BgBlack"))
                                 Spacer()
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 15)
+                                    RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                    Text("R$500,00")
+                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                    Text("\(formatar(valor: initialInvestment+(monthlyInvestment*periodInvestment), tipo: true))")
+                                        .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                 }
-                                .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
                             }
-                            .padding(.horizontal, UIScreen.main.bounds.width*0.07)
                             HStack {
                                 Text("Juros recebido:")
+                                    .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                    .foregroundColor(Color.init("BgBlack"))
                                 Spacer()
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 15)
+                                    RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                    Text("R$500,00")
+                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                    Text("\(formatar(valor: (initialInvestment+(monthlyInvestment*periodInvestment))-(calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee)), tipo: true))")
+                                        .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                 }
-                                .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
                             }
-                            .padding(.horizontal, UIScreen.main.bounds.width*0.07)
                             HStack {
                                 Text("Valor total:")
+                                    .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                    .foregroundColor(Color.init("BgBlack"))
                                 Spacer()
                                 ZStack {
-                                    RoundedRectangle(cornerRadius: 15)
+                                    RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                    Text("R$500,00")
+                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                    Text("\(formatar(valor: calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee), tipo: true))")
+                                        .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                 }
-                                .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
                             }
-                            .padding(.horizontal, UIScreen.main.bounds.width*0.07)
-                        }
+                        }.padding(.horizontal, UIScreen.main.bounds.width*0.05)
                     }
-                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.3)
+                    .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.3)
                 }
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundColor(.white)
-                        List {
-                            HStack {
-                                Text("Mês 1")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 2")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 3")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 4")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 5")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 6")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 7")
-                                Spacer()
-                                Text("R$100,00")
-                            }
-                            HStack {
-                                Text("Mês 8")
-                                Spacer()
-                                Text("R$100,00")
-                            }
+                        VStack{
+                            ScrollView(.vertical, showsIndicators: false){
+                                ForEach (1..<20) { index in
+                                    HStack {
+                                        Text("Mês \(index)").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                            .foregroundColor(Color.init("BgBlack"))
+                                        Spacer()
+                                        Text("R$100,00").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                            .foregroundColor(Color.init("BgBlack"))
+                                    }.padding(.horizontal, UIScreen.main.bounds.width*0.03)
+                                    .padding(.vertical, UIScreen.main.bounds.height*0.006)
+                                    Divider().padding(.horizontal, UIScreen.main.bounds.width*0.03)
+                                }.padding(.top,UIScreen.main.bounds.height*0.014)
+                            }.padding(.horizontal, UIScreen.main.bounds.width*0.01)
                         }
-                        .padding()
-                    }
-                    .frame(width: UIScreen.main.bounds.width*0.8, height: UIScreen.main.bounds.height*0.45)
-                }
-                HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.blue)
-                        VStack {
-                            Text("Fazer nova simulação")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                        }
-                    }
-                    .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.height*0.05)
-                }
-            }
+                    }.padding(.vertical,UIScreen.main.bounds.height*0.006)
+                }.padding(.horizontal, UIScreen.main.bounds.width*0.05)
+                Spacer()
+            }.padding(.top, UIScreen.main.bounds.height*0.012)
         }
     }
 }
 
-struct ResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultsView()
-    }
-}
+//struct ResultsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultsView()
+//    }
+//}
