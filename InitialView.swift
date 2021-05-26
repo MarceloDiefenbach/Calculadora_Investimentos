@@ -24,7 +24,7 @@ struct InitialView: View {
                         Spacer()
                     }.padding(.leading, UIScreen.main.bounds.height*0.04)
                     
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: InputView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)
@@ -39,7 +39,7 @@ struct InitialView: View {
                         }
                     }
                     
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: InputView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.white)
@@ -54,7 +54,7 @@ struct InitialView: View {
                         }
                     }
                     
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: InputView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)

@@ -1,4 +1,4 @@
-    //
+//
 //  ResultsView.swift
 //  Calculadora_Investimentos
 //
@@ -15,8 +15,6 @@ struct ResultsView: View {
     var anualFee: Double
     var periodInvestment: Double
 
-    
-    
     var body: some View {
         ZStack {
             Rectangle()
@@ -54,7 +52,7 @@ struct ResultsView: View {
                                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
                                         .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
-                                    Text("\(formatar(valor: (initialInvestment+(monthlyInvestment*periodInvestment))-(calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee)), tipo: true))")
+                                    Text("\(formatar(valor: calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee)-(initialInvestment+(monthlyInvestment*periodInvestment)), tipo: true))")
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                 }
@@ -83,12 +81,14 @@ struct ResultsView: View {
                             .foregroundColor(.white)
                         VStack{
                             ScrollView(.vertical, showsIndicators: false){
-                                ForEach (1..<20) { index in
+                                let monthcalc: [Double] = calculaMeses(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee)
+                                ForEach (0..<monthcalc.count) { index in
+                                    
                                     HStack {
-                                        Text("Mês \(index)").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                        Text("Mês \(index+1)").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                             .foregroundColor(Color.init("BgBlack"))
                                         Spacer()
-                                        Text("R$100,00").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
+                                        Text("\(formatar(valor: monthcalc[index], tipo: true))").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                             .foregroundColor(Color.init("BgBlack"))
                                     }.padding(.horizontal, UIScreen.main.bounds.width*0.03)
                                     .padding(.vertical, UIScreen.main.bounds.height*0.006)
@@ -104,8 +104,8 @@ struct ResultsView: View {
     }
 }
 
-//struct ResultsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ResultsView()
-//    }
-//}
+struct ResultsView_Previews: PreviewProvider {
+    static var previews: some View {
+        ResultsView(initialInvestment: 0, monthlyInvestment: 1, anualFee: 2, periodInvestment: 12)
+    }
+}

@@ -15,7 +15,7 @@
 		DF11D664265C48EC003600E0 /* PeriodInvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11D660265C48EC003600E0 /* PeriodInvestmentView.swift */; };
 		DF11D665265C48EC003600E0 /* MonthlyInvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11D661265C48EC003600E0 /* MonthlyInvestmentView.swift */; };
 		DF1DE949265C1A4200861686 /* Calculadora_InvestimentosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DE948265C1A4200861686 /* Calculadora_InvestimentosApp.swift */; };
-		DF1DE94B265C1A4200861686 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DE94A265C1A4200861686 /* ContentView.swift */; };
+		DF1DE94B265C1A4200861686 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DE94A265C1A4200861686 /* InputView.swift */; };
 		DF1DE94D265C1A4400861686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1DE94C265C1A4400861686 /* Assets.xcassets */; };
 		DF1DE950265C1A4400861686 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1DE94F265C1A4400861686 /* Preview Assets.xcassets */; };
 		DFBC0108265D334C0018C68F /* SelectFeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBC0107265D334C0018C68F /* SelectFeeView.swift */; };
@@ -35,7 +35,7 @@
 		DF11D661265C48EC003600E0 /* MonthlyInvestmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyInvestmentView.swift; sourceTree = "<group>"; };
 		DF1DE945265C1A4200861686 /* Calculadora_Investimentos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculadora_Investimentos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1DE948265C1A4200861686 /* Calculadora_InvestimentosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculadora_InvestimentosApp.swift; sourceTree = "<group>"; };
-		DF1DE94A265C1A4200861686 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		DF1DE94A265C1A4200861686 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		DF1DE94C265C1A4400861686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF1DE94F265C1A4400861686 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF1DE951265C1A4400861686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				DF11D660265C48EC003600E0 /* PeriodInvestmentView.swift */,
 				DF11D65E265C48EC003600E0 /* PriodInvestment.swift */,
 				B4D427CE265C2FF000C0DD56 /* ResultsView.swift */,
-				DF1DE94A265C1A4200861686 /* ContentView.swift */,
+				DF1DE94A265C1A4200861686 /* InputView.swift */,
 				B49087A3265C413D006C363C /* MainView.swift */,
 			);
 			path = View;
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF1DE94B265C1A4200861686 /* ContentView.swift in Sources */,
+				DF1DE94B265C1A4200861686 /* InputView.swift in Sources */,
 				DFBC0108265D334C0018C68F /* SelectFeeView.swift in Sources */,
 				DF11D665265C48EC003600E0 /* MonthlyInvestmentView.swift in Sources */,
 				DFBC010C265D60120018C68F /* InitialView.swift in Sources */,
