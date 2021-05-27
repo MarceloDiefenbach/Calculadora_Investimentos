@@ -31,12 +31,12 @@ struct InitialInvestmentView: View {
                             .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $initialInvestment, in: 0...100000)
-                    .padding(.horizontal,UIScreen.main.bounds.height*0.06)
+                Slider(value: $initialInvestment, in: 0.01...100000)
+                    .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
                 HStack{
-                    Text("R$0").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                    Text("R$0.01").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                         .foregroundColor(.gray)
                         .frame(width: UIScreen.main.bounds.width*0.2,
                                height: UIScreen.main.bounds.height*0.01,
@@ -59,3 +59,13 @@ struct InitialInvestmentView: View {
 //    }
 //}
 
+let formatter: NumberFormatter = {
+    let formatter = NumberFormatter()
+    formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
+    formatter.numberStyle = .currency
+    
+    formatter.maximumFractionDigits = 0
+    formatter.currencySymbol = "R$"
+    
+    return formatter
+}()

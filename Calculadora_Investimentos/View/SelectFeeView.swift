@@ -33,12 +33,12 @@ struct SelectFeeView: View {
                             .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $feeInvestment, in: 0...20)
-                    .padding(.horizontal,UIScreen.main.bounds.height*0.06)
+                Slider(value: $feeInvestment, in: 0.01...20)
+                    .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
                 HStack{
-                    Text("0%").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                    Text("0.01%").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                         .foregroundColor(.gray)
                         .frame(width: UIScreen.main.bounds.width*0.2,
                                height: UIScreen.main.bounds.height*0.005,

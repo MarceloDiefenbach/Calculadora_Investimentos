@@ -14,21 +14,24 @@ struct InitialView: View {
             ZStack{
                 Rectangle().foregroundColor(Color.init("BgBlack")).ignoresSafeArea()
                 VStack{
-                    Spacer()
                     HStack{
-                        Text("Soluções para sua organização financeira")
-                            .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.height*0.25, alignment: .leading)
+                        Text("""
+Soluções
+para sua
+organização
+financeira
+""")
+                            .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.height*0.26, alignment: .leading)
                             .foregroundColor(Color.white)
                             .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.04))
-                            .multilineTextAlignment(.leading)
                         Spacer()
-                    }.padding(.leading, UIScreen.main.bounds.height*0.04)
+                    }.padding(.leading, UIScreen.main.bounds.height*0.025)
                     
                     NavigationLink(destination: InputView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)
-                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: .center)
                             HStack{
                                 Text("Calcular Investimentos")
                                     .foregroundColor(.white)
@@ -37,28 +40,30 @@ struct InitialView: View {
                                 Spacer()
                             }
                         }
-                    }
+                    }.navigationTitle("Voltar")
+                    .navigationBarHidden(true)
                     
-                    NavigationLink(destination: InputView()) {
+                    NavigationLink(destination: MoneyConvertView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.white)
-                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: .center)
                             HStack{
-                                Text("Calcular Aposentadora")
+                                Text("Converter câmbio")
                                     .foregroundColor(Color.init("BgBlack"))
                                     .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
                                     .padding(.leading, UIScreen.main.bounds.width*0.1)
                                 Spacer()
                             }
                         }
-                    }
+                    }.navigationTitle("Voltar")
+                    .navigationBarHidden(true)
                     
                     NavigationLink(destination: InputView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)
-                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: .center)
                             HStack{
                                 Text("Calcular Financiamento")
                                     .foregroundColor(.white)
@@ -67,10 +72,12 @@ struct InitialView: View {
                                 Spacer()
                             }
                         }
-                    }
-                }.padding(.bottom, UIScreen.main.bounds.height*0.08)
+                    }.navigationTitle("Voltar")
+                    .navigationBarHidden(true)
+                    
+                }.padding(.top, UIScreen.main.bounds.height*0.3)
             }
-        }
+        }.colorScheme(.dark)
     }
 }
 

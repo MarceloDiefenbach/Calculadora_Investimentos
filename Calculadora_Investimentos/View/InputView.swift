@@ -9,10 +9,10 @@ import SwiftUI
 
 struct InputView: View {
     
-    @State var initialInvestment: Double = 191.08
-    @State var monthlyInvestment: Double = 6.37
-    @State var anualFee: Double = 2
-    @State var periodInvestment: Double = 12
+    @State var initialInvestment: Double = 0.01
+    @State var monthlyInvestment: Double = 0.01
+    @State var anualFee: Double = 0.01
+    @State var periodInvestment: Double = 1
     
     var body: some View {
         ZStack{
@@ -52,7 +52,7 @@ func formatar(valor: Double, tipo: Bool) -> String {
     formatter.locale = Locale.current // Change this to another locale if you want to force a specific locale, otherwise this is redundant as the current locale is the default already
     formatter.numberStyle = .currency
     if(tipo){
-        formatter.maximumFractionDigits = 2
+        formatter.maximumFractionDigits = 0
         formatter.currencySymbol = "R$"
     }else{
         formatter.maximumFractionDigits = 0

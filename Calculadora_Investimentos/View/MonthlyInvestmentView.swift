@@ -18,7 +18,10 @@ struct MonthlyInvestmentView: View {
                 .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             VStack{
                 HStack{
-                    Text("Você investirá qual valor por mês?")
+                    Text("""
+                        Você investirá qual
+                        valor por mês?
+                        """)
                         .foregroundColor(Color.init("BgBlack"))
                         .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.015))
                         .multilineTextAlignment(.leading)
@@ -31,12 +34,12 @@ struct MonthlyInvestmentView: View {
                             .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $monthlyInvestmentValue, in: 0...10000)
-                    .padding(.horizontal,UIScreen.main.bounds.height*0.06)
+                Slider(value: $monthlyInvestmentValue, in: 0.01...10000)
+                    .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
                 HStack{
-                    Text("R$0").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                    Text("R$0.01").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                         .foregroundColor(.gray)
                         .frame(width: UIScreen.main.bounds.width*0.2,
                                height: UIScreen.main.bounds.height*0.01,

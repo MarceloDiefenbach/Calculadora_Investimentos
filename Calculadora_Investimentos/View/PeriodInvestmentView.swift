@@ -27,16 +27,21 @@ struct PeriodInvestmentView: View {
                         RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             .frame(width: UIScreen.main.bounds.width*0.35, height: UIScreen.main.bounds.height*0.04, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        Text("\(formatar(valor: periodInvestment, tipo: false)) meses").foregroundColor(Color.white)
-                            .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
+                        if( periodInvestment == 1 ){
+                            Text("\(formatar(valor: periodInvestment, tipo: false)) mês").foregroundColor(Color.white)
+                                .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
+                        } else {
+                            Text("\(formatar(valor: periodInvestment, tipo: false)) meses").foregroundColor(Color.white)
+                                .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
+                        }
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $periodInvestment, in: 0...100)
-                    .padding(.horizontal,UIScreen.main.bounds.height*0.06)
+                Slider(value: $periodInvestment, in: 1...100)
+                    .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
                 HStack{
-                    Text("0").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                    Text("1").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                         .foregroundColor(.gray)
                         .frame(width: UIScreen.main.bounds.width*0.2,
                                height: UIScreen.main.bounds.height*0.01,

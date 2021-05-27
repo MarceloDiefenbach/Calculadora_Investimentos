@@ -37,7 +37,7 @@ struct ResultsView: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                        .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.height*0.05)
                                     Text("\(formatar(valor: initialInvestment+(monthlyInvestment*periodInvestment), tipo: true))")
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
@@ -51,7 +51,7 @@ struct ResultsView: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                        .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.height*0.05)
                                     Text("\(formatar(valor: calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee)-(initialInvestment+(monthlyInvestment*periodInvestment)), tipo: true))")
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
@@ -65,7 +65,7 @@ struct ResultsView: View {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                         .foregroundColor(.blue)
-                                        .frame(width: UIScreen.main.bounds.width*0.3, height: UIScreen.main.bounds.height*0.05)
+                                        .frame(width: UIScreen.main.bounds.width*0.4, height: UIScreen.main.bounds.height*0.05)
                                     Text("\(formatar(valor: calculaRendimento(tempo: Int(periodInvestment), dinheiroInicial: initialInvestment, dinheiroMensal: monthlyInvestment, porcentagemAnual: anualFee), tipo: true))")
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
@@ -94,7 +94,7 @@ struct ResultsView: View {
                                     .padding(.vertical, UIScreen.main.bounds.height*0.006)
                                     Divider().padding(.horizontal, UIScreen.main.bounds.width*0.03)
                                 }.padding(.top,UIScreen.main.bounds.height*0.014)
-                            }.padding(.horizontal, UIScreen.main.bounds.width*0.01)
+                            }.padding(.horizontal, UIScreen.main.bounds.width*0.02)
                         }
                     }.padding(.vertical,UIScreen.main.bounds.height*0.006)
                 }.padding(.horizontal, UIScreen.main.bounds.width*0.05)
