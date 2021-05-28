@@ -10,12 +10,13 @@ import SwiftUI
 struct MoneyConvertView: View {
     
     @State private var valor: Double = 0
-    @State private var tipo1: String = "tipo1"
-    @State private var tipo2: String = "tipo2"
+    @State private var tipo1: String = "US ($)"
+    @State private var tipo2: String = "BRL (R$)"
     @State private var selectedFlavor = String()
 
     @State private var xValorViewToda: Int = 0
-    @State private var xValorPopUp: CGFloat = UIScreen.main.bounds.height*0.6
+    @State private var xValorPopUp: CGFloat = UIScreen.main.bounds.height*0.75
+    @State private var xValorPopUp02: CGFloat = UIScreen.main.bounds.height*0.75
 
     var body: some View {
         ZStack{
@@ -27,7 +28,7 @@ Calcular
 câmbio de
 moedas
 """)
-                        .frame(width: UIScreen.main.bounds.width*0.6, height: UIScreen.main.bounds.height*0.17, alignment: .leading)
+                        .frame(width: UIScreen.main.bounds.width*0.6, alignment: .leading)
                         .foregroundColor(Color.white)
                         .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.04))
                     Spacer()
@@ -51,9 +52,7 @@ moedas
                                 .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                 .foregroundColor(.white)
                                 .onTapGesture {
-                                    xValorViewToda = Int(-UIScreen.main.bounds.height*0.29)
-                                    xValorPopUp = UIScreen.main.bounds.height*0.2
-
+                                    xValorPopUp = UIScreen.main.bounds.height*0.28
                                 }
                         }.padding(.trailing, UIScreen.main.bounds.height*0.02)
                         Text("Para")
@@ -66,6 +65,9 @@ moedas
                             Text("\(tipo2)")
                                 .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                 .foregroundColor(.white)
+                                .onTapGesture {
+                                    xValorPopUp02 = UIScreen.main.bounds.height*0.28
+                                }
                         }
                     }
                 }
@@ -116,32 +118,60 @@ moedas
                     }
                 }.padding(.top, UIScreen.main.bounds.width*0.01)
             }.padding(.top, UIScreen.main.bounds.width*0.45)
-            .offset(y: CGFloat(xValorViewToda)).animation(.spring(response: 0.8, dampingFraction: 0.8, blendDuration: 0))
+            //.offset(y: CGFloat(xValorViewToda)).animation(.spring(response: 0.8, dampingFraction: 0.8, blendDuration: 0))
             
             // picker de primeiro tipo de moeda
-            ZStack{
-                VStack{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
-                        Picker("Flavor", selection: $selectedFlavor) {
-                            Text("US ($)").tag("1")
-                            Text("BRL (R$)").tag("2")
-                            Text("Outro").tag("3")
-                        }.colorScheme(.dark)
-                    }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .center)
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 12).foregroundColor(Color.blue).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.06, alignment: .center)
-                        Text("Confirmar")
-                            .foregroundColor(.white)
-                            .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
-                            
-                    }.padding(.top, -20)
-                    .onTapGesture {
-                        xValorViewToda = xValorViewToda + Int(UIScreen.main.bounds.height*0.29)
-                        xValorPopUp = UIScreen.main.bounds.height*0.6
+            ZStack (alignment: Alignment.top) {
+                RoundedRectangle(cornerRadius: 12).foregroundColor(Color.blue).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5, alignment: .center)
+                HStack(alignment: .top){
+                    VStack{
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
+                            Picker("Flavor", selection: $tipo1) {
+                                Text("US ($)").tag("US ($)")
+                                Text("BRL (R$)").tag("BRL (R$)")
+                                Text("Outro").tag("3")
+                            }.colorScheme(.dark)
+                        }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12).foregroundColor(Color.white).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.06, alignment: .center)
+                            Text("Confirmar")
+                                .foregroundColor(Color.init("BgBlack"))
+                                .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
+                                
+                        }.padding(.top, -20)
+                        .onTapGesture {
+                            xValorPopUp = UIScreen.main.bounds.height*0.75
+                        }
                     }
                 }
             }.offset(y: CGFloat(xValorPopUp)).animation(.spring(response: 0.8, dampingFraction: 0.8, blendDuration: 0))
+            
+            ZStack (alignment: Alignment.top) {
+                RoundedRectangle(cornerRadius: 12).foregroundColor(Color.blue).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.5, alignment: .center)
+                HStack(alignment: .top){
+                    VStack{
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
+                            Picker("Flavor", selection: $tipo2) {
+                                Text("US ($)").tag("US ($)")
+                                Text("BRL (R$)").tag("BRL (R$)")
+                                Text("Outro").tag("3")
+                            }.colorScheme(.dark)
+                        }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 12).foregroundColor(Color.white).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.06, alignment: .center)
+                            Text("Confirmar")
+                                .foregroundColor(Color.init("BgBlack"))
+                                .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
+                                
+                        }.padding(.top, -20)
+                        .onTapGesture {
+                            xValorPopUp02 = UIScreen.main.bounds.height*0.75
+                        }
+                    }
+                }
+            }.offset(y: CGFloat(xValorPopUp02)).animation(.spring(response: 0.8, dampingFraction: 0.8, blendDuration: 0))
         }
     }
 }
