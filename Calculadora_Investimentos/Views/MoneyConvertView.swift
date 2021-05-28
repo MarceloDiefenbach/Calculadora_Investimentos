@@ -9,20 +9,22 @@ import SwiftUI
 
 struct MoneyConvertView: View {
     
+    @ObservedObject private var quoteListVM = QuoteListViewModel()
+    
     @State private var valor: Double = 0
     @State private var tipo1: String = "US ($)"
     @State private var tipo2: String = "BRL (R$)"
     @State private var selectedFlavor = String()
 
-    @State private var xValorViewToda: Int = 0
+    //@State private var xValorViewToda: Int = 0
     @State private var xValorPopUp: CGFloat = UIScreen.main.bounds.height*0.75
     @State private var xValorPopUp02: CGFloat = UIScreen.main.bounds.height*0.75
 
     var body: some View {
-        ZStack{
+        ZStack {
             Rectangle().foregroundColor(Color.init("BgBlack")).ignoresSafeArea()
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Text("""
 Calcular
 câmbio de
@@ -33,14 +35,14 @@ moedas
                         .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.04))
                     Spacer()
                 }.padding(.leading, UIScreen.main.bounds.height*0.025)
-                ZStack{
-                    HStack{
+                ZStack {
+                    HStack {
                         RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                             .strokeBorder(Color.white, lineWidth: 2)
                             .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.1)
                             .foregroundColor(.clear)
                     }
-                    HStack{
+                    HStack {
                         Text("De")
                             .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.018))
                             .foregroundColor(.white)
@@ -109,7 +111,7 @@ moedas
                                 RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                                     .frame(width: UIScreen.main.bounds.width*0.35, height: UIScreen.main.bounds.height*0.04, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                    Text("$ \(formatar(valor: valor, tipo: false))").foregroundColor(Color.white)
+                                Text("$ \(formatar(valor: valor*(quoteListVM.quotes.first?.bid ?? 1), tipo: false))").foregroundColor(Color.white)
                                         .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
 
                             }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B49087A1265C3E25006C363C /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B49087A0265C3E25006C363C /* Poppins-Bold.ttf */; };
 		B49087A4265C413D006C363C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49087A3265C413D006C363C /* MainView.swift */; };
+		B4C6F48D266161200028EA85 /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6F48C266161200028EA85 /* QuoteModel.swift */; };
+		B4C6F490266164490028EA85 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6F48F266164490028EA85 /* Webservice.swift */; };
 		B4D427CF265C2FF000C0DD56 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D427CE265C2FF000C0DD56 /* ResultsView.swift */; };
 		DF11D662265C48EC003600E0 /* PriodInvestment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11D65E265C48EC003600E0 /* PriodInvestment.swift */; };
 		DF11D663265C48EC003600E0 /* InitialInvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF11D65F265C48EC003600E0 /* InitialInvestmentView.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		B49087A0265C3E25006C363C /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		B49087A3265C413D006C363C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B4C6F48C266161200028EA85 /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		B4C6F48F266164490028EA85 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		B4D427CE265C2FF000C0DD56 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 		DF11D65E265C48EC003600E0 /* PriodInvestment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriodInvestment.swift; sourceTree = "<group>"; };
 		DF11D65F265C48EC003600E0 /* InitialInvestmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialInvestmentView.swift; sourceTree = "<group>"; };
@@ -61,7 +65,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B49087A2265C411C006C363C /* View */ = {
+		B49087A2265C411C006C363C /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DFB5FCF5265FFC5400D63476 /* MoneyConvertView.swift */,
@@ -75,7 +79,23 @@
 				DF1DE94A265C1A4200861686 /* InputView.swift */,
 				B49087A3265C413D006C363C /* MainView.swift */,
 			);
-			path = View;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4C6F48B266160F10028EA85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6F48C266161200028EA85 /* QuoteModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B4C6F48E266164320028EA85 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6F48F266164490028EA85 /* Webservice.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DF1DE93C265C1A4200861686 = {
@@ -98,7 +118,9 @@
 		DF1DE947265C1A4200861686 /* Calculadora_Investimentos */ = {
 			isa = PBXGroup;
 			children = (
-				B49087A2265C411C006C363C /* View */,
+				B4C6F48E266164320028EA85 /* Services */,
+				B4C6F48B266160F10028EA85 /* Models */,
+				B49087A2265C411C006C363C /* Views */,
 				DFF67110265C260300E09216 /* Fonts */,
 				DF1DE948265C1A4200861686 /* Calculadora_InvestimentosApp.swift */,
 				DF1DE94C265C1A4400861686 /* Assets.xcassets */,
@@ -208,10 +230,12 @@
 				DFBC010C265D60120018C68F /* InitialView.swift in Sources */,
 				DF11D662265C48EC003600E0 /* PriodInvestment.swift in Sources */,
 				B49087A4265C413D006C363C /* MainView.swift in Sources */,
+				B4C6F490266164490028EA85 /* Webservice.swift in Sources */,
 				B4D427CF265C2FF000C0DD56 /* ResultsView.swift in Sources */,
 				DF11D663265C48EC003600E0 /* InitialInvestmentView.swift in Sources */,
 				DF11D664265C48EC003600E0 /* PeriodInvestmentView.swift in Sources */,
 				DF1DE949265C1A4200861686 /* Calculadora_InvestimentosApp.swift in Sources */,
+				B4C6F48D266161200028EA85 /* QuoteModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +373,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Marcelo.Calculadora-Investimentos";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Marcelo.CalculadoraInvestimentos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -371,10 +395,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Marcelo.Calculadora-Investimentos";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Marcelo.CalculadoraInvestimentos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
