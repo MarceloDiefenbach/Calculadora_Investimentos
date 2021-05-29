@@ -59,13 +59,13 @@ financeira
                     }.navigationTitle("Voltar")
                     .navigationBarHidden(true)
                     
-                    NavigationLink(destination: InputView()) {
+                    NavigationLink(destination: AposentadoriaView()) {
                         ZStack{
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)
                                 .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: .center)
                             HStack{
-                                Text("Calcular Financiamento")
+                                Text("Calculadora de aposentadora")
                                     .foregroundColor(.white)
                                     .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
                                     .padding(.leading, UIScreen.main.bounds.width*0.1)

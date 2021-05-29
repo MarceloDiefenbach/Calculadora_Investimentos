@@ -23,13 +23,13 @@ class Webservice {
                 }
                 return
             }
-            let payload: String? = String(data: data, encoding: .utf8)
-            print(payload)
+            //let payload: String? = String(data: data, encoding: .utf8)
+            //print(payload)
             
 //            let xyz: [String:Quote]
             let quotes = try? JSONDecoder().decode([String:Quote].self, from: data)
             
-            print(quotes)
+            //print(quotes)
             
             DispatchQueue.main.async {
                 completion(quotes)

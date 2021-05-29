@@ -9,10 +9,10 @@ import SwiftUI
 
 struct InputView: View {
     
-    @State var initialInvestment: Double = 0.01
-    @State var monthlyInvestment: Double = 0.01
-    @State var anualFee: Double = 0.01
-    @State var periodInvestment: Double = 1
+    @State var initialInvestment: Double = 0
+    @State var monthlyInvestment: Double = 0
+    @State var anualFee: Double = 0
+    @State var periodInvestment: Double = 0
     
     var body: some View {
         ZStack{
@@ -67,12 +67,11 @@ func formatar(valor: Double, tipo: Bool) -> String {
 
 func calculaRendimento(tempo: Int, dinheiroInicial: Double, dinheiroMensal: Double, porcentagemAnual: Double) -> Double {
     
-    let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 12) - 1
+    let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 1/12)-1
+
     var resultado: Double = dinheiroInicial
-    
     for _ in (1...tempo) {
-        print(resultado)
-        resultado += (porcentagemMensal/100 * resultado) + dinheiroMensal
+        resultado = ((porcentagemMensal+1) * resultado) + dinheiroMensal
     }
     return resultado
 }
@@ -80,13 +79,14 @@ func calculaRendimento(tempo: Int, dinheiroInicial: Double, dinheiroMensal: Doub
 func calculaMeses(tempo: Int, dinheiroInicial: Double, dinheiroMensal: Double, porcentagemAnual: Double) -> [Double] {
     
     var resultado: [Double] = []
-    let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 12) - 1
+    let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 1/12) - 1
     
     var total: Double = dinheiroInicial
     for _ in (1...tempo) {
-        total += (porcentagemMensal/100 * total) + dinheiroMensal
+        total = ((porcentagemMensal+1) * total) + dinheiroMensal
         resultado.append(total)
     }
+
     return resultado
 }
 

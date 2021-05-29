@@ -31,7 +31,7 @@ struct InitialInvestmentView: View {
                             .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $initialInvestment, in: 0.01...100000)
+                Slider(value: $initialInvestment, in: 0.01...100000, step: 1)
                     .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
