@@ -31,12 +31,12 @@ struct InitialInvestmentView: View {
                             .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                     }
                 }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                Slider(value: $initialInvestment, in: 0.01...100000, step: 1)
+                Slider(value: $initialInvestment, in: 0.01...100000, step: 100)
                     .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                     .padding(.top,UIScreen.main.bounds.width*0.01)
                     .padding(.bottom,UIScreen.main.bounds.width*0.015)
                 HStack{
-                    Text("R$0.01").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                    Text("R$0").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                         .foregroundColor(.gray)
                         .frame(width: UIScreen.main.bounds.width*0.2,
                                height: UIScreen.main.bounds.height*0.01,

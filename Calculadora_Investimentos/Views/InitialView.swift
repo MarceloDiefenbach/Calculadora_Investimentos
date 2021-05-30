@@ -11,10 +11,10 @@ struct InitialView: View {
 
     var body: some View {
         NavigationView{
-            ZStack{
+            ZStack (alignment: Alignment.bottom) {
                 Rectangle().foregroundColor(Color.init("BgBlack")).ignoresSafeArea()
-                VStack{
-                    HStack{
+                VStack {
+                    HStack {
                         Text("""
 Soluções
 para sua
@@ -25,14 +25,14 @@ financeira
                             .foregroundColor(Color.white)
                             .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.04))
                         Spacer()
-                    }.padding(.leading, UIScreen.main.bounds.height*0.025)
+                    }.padding(.leading, UIScreen.main.bounds.height*0.04)
                     
                     NavigationLink(destination: InputView()) {
-                        ZStack{
+                        ZStack {
                             RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                                 .foregroundColor(.blue)
                                 .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.07, alignment: .center)
-                            HStack{
+                            HStack {
                                 Text("Calcular Investimentos")
                                     .foregroundColor(.white)
                                     .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.02))
@@ -75,7 +75,7 @@ financeira
                     }.navigationTitle("Voltar")
                     .navigationBarHidden(true)
                     
-                }.padding(.top, UIScreen.main.bounds.height*0.3)
+                }.padding(.bottom, UIScreen.main.bounds.height*0.06)
             }
         }.colorScheme(.dark)
     }

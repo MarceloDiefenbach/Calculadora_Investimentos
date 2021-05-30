@@ -13,11 +13,11 @@ struct AposentadoriaView: View {
     @State var totalAcumulado: Double = 0
     
     var body: some View {
-        ZStack{
+        ZStack (alignment: Alignment.bottom){
             Rectangle().foregroundColor(Color.init("BgBlack")).ignoresSafeArea()
-            VStack{
+            VStack {
                 Spacer()
-                HStack{
+                HStack {
                     Text("""
 Calcular
 aposentadoria
@@ -26,8 +26,8 @@ aposentadoria
                         .foregroundColor(Color.white)
                         .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.04))
                     Spacer()
-                }.padding(.leading, UIScreen.main.bounds.height*0.025)
-                ZStack{
+                }.padding(.leading, UIScreen.main.bounds.height*0.04)
+                ZStack {
                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                         .foregroundColor(Color.white)
                         .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.18, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -48,7 +48,7 @@ aposentadoria
                                     .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                             }
                         }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                        Slider(value: $valorAposentadoria, in: 1000...10000)
+                        Slider(value: $valorAposentadoria, in: 1000...10000, step: 100)
                             .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                             .padding(.top,UIScreen.main.bounds.width*0.01)
                             .padding(.bottom,UIScreen.main.bounds.width*0.015)
@@ -66,8 +66,8 @@ aposentadoria
                                        alignment: .trailing)
                         }.padding(.horizontal,UIScreen.main.bounds.width*0.12)
                     }
-                }
-                ZStack{
+                }.padding(.bottom,UIScreen.main.bounds.width*0.01)
+                ZStack {
                     RoundedRectangle(cornerRadius: UIScreen.main.bounds.height*0.015)
                         .foregroundColor(Color.blue)
                         .frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.17, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -88,7 +88,7 @@ aposentadoria
                             }
                         
                     }.padding(.bottom, UIScreen.main.bounds.height*0.01)
-                }.padding(.bottom, UIScreen.main.bounds.height*0.04)
+                }.padding(.bottom, UIScreen.main.bounds.height*0.06)
             }
         }
         
