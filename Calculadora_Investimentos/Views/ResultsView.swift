@@ -100,7 +100,7 @@ struct ResultsView: View {
                 }.padding(.horizontal, UIScreen.main.bounds.width*0.05)
                 Spacer()
             }.padding(.top, UIScreen.main.bounds.height*0.012)
-        }
+        }.navigationTitle("Resultados")
     }
 }
 

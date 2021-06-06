@@ -37,7 +37,10 @@ struct InputView: View {
                 .padding(.bottom, UIScreen.main.bounds.height*0.006)
                 Spacer()
             }.padding(.top, UIScreen.main.bounds.height*0.01)
-        }.navigationBarTitleDisplayMode(.inline)
+        }.navigationTitle("Calcular")
+        //.navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        //ver aqui pra nao ficar o texto no meio da proxima tela
     }
 }
 
@@ -70,7 +73,7 @@ func calculaRendimento(tempo: Int, dinheiroInicial: Double, dinheiroMensal: Doub
     let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 1/12)-1
 
     var resultado: Double = dinheiroInicial
-    for _ in (1...tempo) {
+    for _ in (0...tempo) {
         resultado = ((porcentagemMensal+1) * resultado) + dinheiroMensal
     }
     return resultado
@@ -82,7 +85,7 @@ func calculaMeses(tempo: Int, dinheiroInicial: Double, dinheiroMensal: Double, p
     let porcentagemMensal: Double = pow(1+porcentagemAnual/100, 1/12) - 1
     
     var total: Double = dinheiroInicial
-    for _ in (1...tempo) {
+    for _ in (0...tempo) {
         total = ((porcentagemMensal+1) * total) + dinheiroMensal
         resultado.append(total)
     }

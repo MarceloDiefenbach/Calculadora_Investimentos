@@ -40,7 +40,7 @@ financeira
                                 Spacer()
                             }
                         }
-                    }.navigationTitle("Voltar")
+                    }.navigationTitle("Início")
                     .navigationBarHidden(true)
                     
                     NavigationLink(destination: MoneyConvertView()) {
@@ -56,7 +56,7 @@ financeira
                                 Spacer()
                             }
                         }
-                    }.navigationTitle("Voltar")
+                    }.navigationTitle("Início")
                     .navigationBarHidden(true)
                     
                     NavigationLink(destination: AposentadoriaView()) {
@@ -72,7 +72,7 @@ financeira
                                 Spacer()
                             }
                         }
-                    }.navigationTitle("Voltar")
+                    }.navigationTitle("Início")
                     .navigationBarHidden(true)
                     
                 }.padding(.bottom, UIScreen.main.bounds.height*0.06)
