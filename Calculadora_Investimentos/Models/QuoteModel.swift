@@ -10,9 +10,9 @@ import Foundation
 class QuoteListViewModel: ObservableObject {
     @Published var quotes = [QuoteViewModel]()
     
-    init() {
+    init(exchange: String) {
         
-        Webservice().getQuotes { quotes in
+        Webservice().getQuotes(exchange: exchange) { quotes in
             
             if let quotes = quotes {
                 self.quotes = quotes.map({ Tuple in
@@ -21,6 +21,18 @@ class QuoteListViewModel: ObservableObject {
             }
         }
         
+    }
+    
+    func update(exchange: String) {
+        quotes.removeAll()
+        Webservice().getQuotes(exchange: exchange) { quotes in
+            
+            if let quotes = quotes {
+                self.quotes = quotes.map({ Tuple in
+                    return QuoteViewModel(quote: Tuple.value)
+                })
+            }
+        }
     }
     
 }

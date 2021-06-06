@@ -9,9 +9,9 @@ import Foundation
 
 class Webservice {
     
-    func getQuotes(completion: @escaping ([String:Quote]?) -> ()) {
+    func getQuotes(exchange: String, completion: @escaping ([String:Quote]?) -> ()) {
         
-        guard let url = URL(string: "https://economia.awesomeapi.com.br/last/USD-BRL") else {
+        guard let url = URL(string: "https://economia.awesomeapi.com.br/last/\(exchange)") else {
             fatalError("Invalid URL")
         }
         

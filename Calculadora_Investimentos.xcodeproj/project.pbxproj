@@ -19,7 +19,6 @@
 		DF1DE94B265C1A4200861686 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DE94A265C1A4200861686 /* InputView.swift */; };
 		DF1DE94D265C1A4400861686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1DE94C265C1A4400861686 /* Assets.xcassets */; };
 		DF1DE950265C1A4400861686 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1DE94F265C1A4400861686 /* Preview Assets.xcassets */; };
-		DFA56B832660266A00E20A86 /* MoneyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA56B822660266A00E20A86 /* MoneyPickerView.swift */; };
 		DFA56B8626615E7500E20A86 /* AposentadoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA56B8526615E7500E20A86 /* AposentadoriaView.swift */; };
 		DFB5FCF6265FFC5400D63476 /* MoneyConvertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB5FCF5265FFC5400D63476 /* MoneyConvertView.swift */; };
 		DFBC0108265D334C0018C68F /* SelectFeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBC0107265D334C0018C68F /* SelectFeeView.swift */; };
@@ -44,7 +43,6 @@
 		DF1DE94C265C1A4400861686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF1DE94F265C1A4400861686 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DF1DE951265C1A4400861686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DFA56B822660266A00E20A86 /* MoneyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyPickerView.swift; sourceTree = "<group>"; };
 		DFA56B8526615E7500E20A86 /* AposentadoriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AposentadoriaView.swift; sourceTree = "<group>"; };
 		DFB5FCF5265FFC5400D63476 /* MoneyConvertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyConvertView.swift; sourceTree = "<group>"; };
 		DFBC0107265D334C0018C68F /* SelectFeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeeView.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				DFA56B8526615E7500E20A86 /* AposentadoriaView.swift */,
-				DFA56B822660266A00E20A86 /* MoneyPickerView.swift */,
 				DFB5FCF5265FFC5400D63476 /* MoneyConvertView.swift */,
 				DFBC010B265D60120018C68F /* InitialView.swift */,
 				DFBC0107265D334C0018C68F /* SelectFeeView.swift */,
@@ -223,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF1DE94B265C1A4200861686 /* InputView.swift in Sources */,
-				DFA56B832660266A00E20A86 /* MoneyPickerView.swift in Sources */,
 				DFB5FCF6265FFC5400D63476 /* MoneyConvertView.swift in Sources */,
 				DFBC0108265D334C0018C68F /* SelectFeeView.swift in Sources */,
 				DFA56B8626615E7500E20A86 /* AposentadoriaView.swift in Sources */,

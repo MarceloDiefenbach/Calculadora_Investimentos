@@ -48,7 +48,7 @@ aposentadoria
                                     .font(Font.custom("Poppins-Medium", size: UIScreen.main.bounds.height*0.02))
                             }
                         }.padding(.horizontal,UIScreen.main.bounds.height*0.05)
-                        Slider(value: $valorAposentadoria, in: 1000...10000, step: 100)
+                        Slider(value: $valorAposentadoria, in: 1000...30000, step: 100)
                             .padding(.horizontal,UIScreen.main.bounds.height*0.05)
                             .padding(.top,UIScreen.main.bounds.width*0.01)
                             .padding(.bottom,UIScreen.main.bounds.width*0.015)
@@ -59,7 +59,7 @@ aposentadoria
                                        height: UIScreen.main.bounds.height*0.01,
                                        alignment: .leading)
                             Spacer()
-                            Text("R$10.000").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
+                            Text("R$30.000").font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.013))
                                 .foregroundColor(.gray)
                                 .frame(width: UIScreen.main.bounds.width*0.2,
                                        height: UIScreen.main.bounds.height*0.01,

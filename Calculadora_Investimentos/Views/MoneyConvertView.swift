@@ -9,13 +9,15 @@ import SwiftUI
 
 struct MoneyConvertView: View {
     
-    @ObservedObject private var quoteListVM = QuoteListViewModel()
+    @ObservedObject private var quoteListVM = QuoteListViewModel(exchange: "USD-BRL")
     
     @State private var valor: Double = 0
-    @State private var tipo1: String = "US($)"
-    @State private var tipo2: String = "BRL(R$)"
+    @State private var tipo1: String = "USD"
+    @State private var tipo2: String = "BRL"
     @State private var selectedFlavor = String()
 
+    
+    
     //@State private var xValorViewToda: Int = 0
     @State private var xValorPopUp: CGFloat = UIScreen.main.bounds.height*0.75
     @State private var xValorPopUp02: CGFloat = UIScreen.main.bounds.height*0.75
@@ -78,7 +80,7 @@ moedas
                             }
                         }.padding(.top, UIScreen.main.bounds.height*0.01)
                         HStack {
-                            Text("Cotação autal: \(tipo2) \(formatarCotacao(valor: quoteListVM.quotes.first?.bid ?? 1, tipo: false)) ")
+                            Text("Cotação atual: \(tipo2) \(formatarCotacao(valor: quoteListVM.quotes.first?.bid ?? 1, tipo: false)) ")
                                 .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                 .foregroundColor(.white)
                         }.padding(.top, UIScreen.main.bounds.height*0.005)
@@ -136,8 +138,8 @@ moedas
                         ZStack {
                             RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
                             Picker("Flavor", selection: $tipo1) {
-                                Text("US ($)").tag("US($)")
-                                Text("BRL (R$)").tag("BRL(R$)")
+                                Text("USD").tag("USD")
+                                Text("BRL").tag("BRL")
                                 Text("Outro").tag("3")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
@@ -150,6 +152,7 @@ moedas
                         }.padding(.top, -20)
                         .onTapGesture {
                             xValorPopUp = UIScreen.main.bounds.height*0.75
+                            quoteListVM.update(exchange: "\(tipo1)-\(tipo2)")
                         }
                     }
                 }
@@ -162,8 +165,8 @@ moedas
                         ZStack{
                             RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
                             Picker("Flavor", selection: $tipo2) {
-                                Text("US ($)").tag("US($)")
-                                Text("BRL (R$)").tag("BRL(R$)")
+                                Text("USD").tag("USD")
+                                Text("BRL").tag("BRL")
                                 Text("Outro").tag("3")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
@@ -176,6 +179,7 @@ moedas
                         }.padding(.top, -20)
                         .onTapGesture {
                             xValorPopUp02 = UIScreen.main.bounds.height*0.75
+                            quoteListVM.update(exchange: "\(tipo1)-\(tipo2)")
                         }
                     }
                 }
