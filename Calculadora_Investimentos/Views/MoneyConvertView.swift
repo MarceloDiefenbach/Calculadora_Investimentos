@@ -58,10 +58,11 @@ moedas
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                     Image("Options_Down").resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width*0.018)
-                                }.onTapGesture {
-                                    xValorPopUp = UIScreen.main.bounds.height*0.1
                                 }
                             }.padding(.trailing, UIScreen.main.bounds.height*0.02)
+                            .onTapGesture {
+                                xValorPopUp = UIScreen.main.bounds.height*0.1
+                            }
                             Text("Para")
                                 .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.018))
                                 .foregroundColor(.white)
@@ -74,9 +75,10 @@ moedas
                                         .font(Font.custom("Poppins-Regular", size: UIScreen.main.bounds.height*0.018))
                                         .foregroundColor(.white)
                                     Image("Options_Down").resizable().aspectRatio(contentMode: .fit).frame(width: UIScreen.main.bounds.width*0.018)
-                                }.onTapGesture {
-                                    xValorPopUp02 = UIScreen.main.bounds.height*0.1
                                 }
+                            }
+                            .onTapGesture {
+                                xValorPopUp02 = UIScreen.main.bounds.height*0.1
                             }
                         }.padding(.top, UIScreen.main.bounds.height*0.01)
                         HStack {
