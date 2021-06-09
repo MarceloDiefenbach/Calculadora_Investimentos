@@ -139,8 +139,10 @@ moedas
                             RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
                             Picker("Flavor", selection: $tipo1) {
                                 Text("USD").tag("USD")
+                                Text("AUD").tag("AUD")
                                 Text("BRL").tag("BRL")
-                                Text("Outro").tag("3")
+                                Text("EUR").tag("EUR")
+                                Text("BTC").tag("BTC")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
                         ZStack {
@@ -166,8 +168,10 @@ moedas
                             RoundedRectangle(cornerRadius: 12).foregroundColor(Color.init("BgBlack")).frame(width: UIScreen.main.bounds.width*0.9, height: UIScreen.main.bounds.height*0.2, alignment: .center)
                             Picker("Flavor", selection: $tipo2) {
                                 Text("USD").tag("USD")
+                                Text("AUD").tag("AUD")
                                 Text("BRL").tag("BRL")
-                                Text("Outro").tag("3")
+                                Text("EUR").tag("EUR")
+                                Text("BTC").tag("BTC")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
                         ZStack{
