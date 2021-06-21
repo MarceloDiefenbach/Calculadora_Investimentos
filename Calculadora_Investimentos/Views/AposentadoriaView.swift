@@ -74,7 +74,7 @@ aposentadoria
                     VStack (alignment: .center){
                             Text("""
                                 Para ter este salário você
-                                precisa acumular investido:
+                                precisa acumular:
                                 """)
                                 .foregroundColor(Color.white)
                                 .font(Font.custom("Poppins-Bold", size: UIScreen.main.bounds.height*0.019))

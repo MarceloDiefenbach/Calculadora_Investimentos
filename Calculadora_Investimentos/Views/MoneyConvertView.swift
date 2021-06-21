@@ -144,7 +144,6 @@ moedas
                                 Text("AUD").tag("AUD")
                                 Text("BRL").tag("BRL")
                                 Text("EUR").tag("EUR")
-                                Text("BTC").tag("BTC")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
                         ZStack {
@@ -173,7 +172,6 @@ moedas
                                 Text("AUD").tag("AUD")
                                 Text("BRL").tag("BRL")
                                 Text("EUR").tag("EUR")
-                                Text("BTC").tag("BTC")
                             }.colorScheme(.dark)
                         }.frame(width: UIScreen.main.bounds.width*0.9, alignment: .top)
                         ZStack{
